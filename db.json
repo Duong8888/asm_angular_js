@@ -1,0 +1,52 @@
+{
+  "products": [{
+    "id": 1,
+    "name": "Phạm Ngọc Khánh",
+    "type_id": 2,
+    "area": 4050,
+    "price": 8000,
+    "image_url": "https://picsum.photos/200/300",
+    "status": 1
+  },
+  {
+    "id": 2,
+    "name": "Nguyễn Tiến Trường",
+    "type_id": 3,
+    "area": 400,
+    "price": 45000,
+    "image_url": "https://picsum.photos/200/300",
+    "status": 0
+  },
+  {
+    "id": 3,
+    "name": "Đinh Tuấn Anh",
+    "type_id": 1,
+    "area": 200,
+    "price": 3000,
+    "image_url": "https://picsum.photos/200/300",
+    "status": 2
+  },
+  {
+    "id": 4,
+    "name": "Phạm Hoàng Tuấn",
+    "type_id": 3,
+    "area": 4500,
+    "price": 7600000,
+    "image_url": "https://picsum.photos/200/300",
+    "status": 0
+  }],
+  "category": [
+    {
+      "id": 1,
+      "name": "Chung cư"
+    },
+    {
+      "id": 2,
+      "name": "Nhà đất"
+    },
+    {
+      "id": 3,
+      "name": "Đất"
+    }
+  ]
+}

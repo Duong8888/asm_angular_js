@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angularjs route</title>
+</head>
+<body ng-app="angularjs-route">
+    <header>HEADER</header>
+    <nav>
+        <ul>
+            <li><a href="#!/">Trang chủ</a></li>
+            <li><a href="#!/lien-he">Liên hệ</a></li>
+            <li><a href="#!/quan-ly">Quản lý người yêu</a></li>
+            <li><a href="#!/quan-ly-them-moi">Thêm mới người yêu</a></li>
+        </ul>
+    </nav>
+    <main ng-view>
+        <!-- Phần thay đổi -->
+    </main>
+    <footer>FOOTER</footer>
+
+
+    <script src="./libs/angular.min.js"></script>
+    <script src="./libs/angular-route.min.js"></script>
+    <!-- Controllers -->
+    <script src="./controllers/HomeController.js"></script>
+    <script src="./controllers/GirlFriendController.js"></script>
+    <script src="./controllers/GirlFriendDetailController.js"></script>
+
+    <script>
+        var app = angular.module('angularjs-route', ['ngRoute']);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    // ND HTML được hiển thị ở vị trí ng-view
+                    // template: '<h1>{{content}}</h1>',
+                    templateUrl: './pages/trang-chu.html',
+                    // Controller quản lý tất cả dữ liệu trên template
+                    controller: HomeController
+                })
+
+                .when('/quan-ly', {
+                    templateUrl: './pages/quan-ly.html',
+                    controller: GirlFriendController
+                })
+                // Nếu đường dẫn cần nhận giá trị thì đặt sau dấu :
+                // Trong controller sẽ dùng $location.params.id để lấy gtri
+                .when('/quan-ly-chi-tiet/:id/:name', {
+                    templateUrl: './pages/quan-ly-chi-tiet.html',
+                    controller: GirlFriendDetailController
+                })
+                .when('/quan-ly-them-moi', {
+                    templateUrl: './pages/quan-ly-them-moi.html',
+                    controller: GirlFriendController
+                })
+                .when('/quan-ly-sua', {
+                    templateUrl: './pages/quan-ly-them-moi.html'
+                })
+
+
+                .when('/lien-he', {
+                    template: '<p>Lien he</p>'
+                })
+                .when('/not-found', {
+                    // tempateUrl: './pages/404.html',
+                    template: '<h1>404 Not found</h1>'
+                })
+                // Nếu tất cả đường dẫn trên kia đều k chạy vào
+                .otherwise({
+                    // Thì chạy vào đây và điều hướng về route /not-found
+                    redirectTo: '/not-found'
+                })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<div class="box box-default">
+    <div class="box-header with-border">
+      <h4 class="box-title">Thêm bất động sản.</h4>		
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body wizard-content">
+        <form action="#" class="tab-wizard wizard-circle wizard clearfix" role="application" id="steps-uid-0"><div class="steps clearfix"></div><div class="content clearfix">
+            <!-- Step 1 -->
+            <h6 id="steps-uid-0-h-0" tabindex="-1" class="title current">Client Information</h6>
+            <section id="steps-uid-0-p-0" role="tabpanel" aria-labelledby="steps-uid-0-h-0" class="body current" aria-hidden="false">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input ng-model="test" type="text" value="ÁNH DƯƠNG" >
+                            <label for="firstName5">Tên bất động sản :</label>
+                            <input type="text"   class="form-control" id="firstName5"> </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lastName1">Diện tích :</label>
+                            <input type="text" ng-model="area" class="form-control" id="lastName1"> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="addressline1">Giá:</label>
+                            <input type="text" ng-model="price" class="form-control" id="addressline1"> </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="addressline2">Đường dẫn ảnh :</label>
+                            <input type="text" ng-model="image_url" class="form-control" id="addressline2"> </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="location3">Trạng thái :</label>
+                            <select ng-model="status" class="custom-select form-control" id="location3" name="location">
+                                <option value="0">Chưa bán</option>
+                                <option value="1">Đã cọc</option>
+                                <option value="2">Đã bán</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="location3">Loại :</label>
+                            <select ng-model="type_id" class="custom-select form-control" id="location3" name="location">
+                                <option value="1">Chung cư</option>
+                                <option value="2">Nhà</option>
+                                <option value="3">Đất</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Step 2 -->
+        </div><div class="actions clearfix"><ul role="menu" aria-label="Pagination"><li class="disabled" aria-disabled="true"><a href="#previous" role="menuitem">Previous</a></li><li aria-hidden="false" aria-disabled="false"><a href="#!/save" role="menuitem">Next</a></li><li aria-hidden="true" style="display: none;"><a href="#finish" role="menuitem">Submit</a></li></ul></div></form>
+    </div>
+    <!-- /.box-body -->
+  </div>

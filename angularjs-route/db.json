@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "ny": [
+    {
+      "id":1,
+      "ten": "Nguyen Thi B",
+      "biet_danh": "Meo meo",
+      "tuoi": 40,
+      "dia_chi": "Royal city",
+      "sdt": "0392888888",
+      "so_thich": "Phi cong",
+      "trang_thai": 1 
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "info": {
+    "ten": "Nguyễn Ánh Dương",
+    "tuoi": 20,
+    "dia_chi": "Hà Tây Tây"
+  }
+}

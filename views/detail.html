@@ -1,0 +1,30 @@
+<div class="box-body">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="box box-body b-1 text-center no-shadow">
+                <img src="{{detailProduct.image_url}}" id="product-image" class="img-fluid" alt="">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="col-md-8 col-sm-6">
+            <h2 class="box-title mt-0">{{detailProduct.name}}</h2>
+
+            <h4 class="pro-price mb-0 mt-20">Giá : ${{detailProduct.price}}</h4>
+            <hr>
+            <p>Loại : <span ng-repeat="item in categoryList">{{item.id == detailProduct.type_id ? item.name : ""}}</span></p>
+            <p ng-if="detailProduct.status == 0">Trạng Thái : Chưa bán</p>
+            <p ng-if="detailProduct.status == 1">Trạng Thái : Đã cọc</p>
+            <p ng-if="detailProduct.status == 2">Trạng Thái : Đã bán</p>
+            <h4 class="pro-price mb-0 mt-20">Diện tích : {{detailProduct.area}}m</h4>
+            
+            <hr>
+            <div class="gap-items">
+                <button class="btn btn-success"><i class="mdi mdi-shopping"></i> Buy Now!</button>
+                <button class="btn btn-primary"><i class="mdi mdi-cart-plus"></i> Add To Cart</button>
+                <button class="btn btn-infomr"><i class="mdi mdi-compare"></i> Compare</button>
+                <button class="btn btn-danger"><i class="mdi mdi-heart"></i> Wishlist</button>
+            </div>
+           
+        </div>
+    </div>
+</div>

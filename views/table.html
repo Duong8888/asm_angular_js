@@ -1,0 +1,59 @@
+<div class="col-12">
+  <a href="#!/add">
+    <button type="button" class="btn btn-primary w-p30 mb-20">Thêm bất đông sản</button>
+  </a>
+  <div class="box">
+    <div class="box-header with-border">
+      <h4 class="box-title">Danh sách bất động sản</h4>
+      <div class="box-controls pull-right">
+        <div class="lookup lookup-circle lookup-right">
+          <input type="text" name="s">
+        </div>
+      </div>
+
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Loại</th>
+            <th>Ảnh</th>
+            <th>Trạn thái</th>
+            <th>Diện tích</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
+          </tr>
+          <tr ng-repeat="item in productList">
+            <td>{{item.id}}</td>
+            <td><a href="#!/detail/{{item.id}}">{{item.name}}</a></td>
+            <td>
+              <span ng-repeat="item2 in categoryList">
+                {{item.type_id == item2.id ? item2.name : ""}}
+              </span>
+            </td>
+            <td><img style="width: 50px;height: 50px;border-radius: 5px;object-fit: cover;" src="{{item.image_url}}"
+                alt=""></td>
+            <!-- success/danger/warning -->
+            <td>
+              <span ng-if="item.status == 0" class="badge badge-pill badge-success">Chưa bán</span>
+              <span ng-if="item.status == 1" class="badge badge-pill badge-warning">Đã cọc</span>
+              <span ng-if="item.status == 2" class="badge badge-pill badge-danger">Đã bán</span>
+            </td>
+            <td>{{item.area}}</td>
+            <td>{{item.price}}</td>
+            <td>
+              <button type="button" class="waves-effect waves-light btn btn-info-light btn-flat mb-5">Sửa</button>
+              <a onclick="return confirm('Bạn chắc chắn muốn xóa sản phẩm này chứ ?')" href="#!/delete/{{item.id}}"><button type="button"
+                  class="waves-effect waves-light btn btn-danger-light btn-flat mb-5">Xóa</button></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+</div>
