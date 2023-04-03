@@ -1,6 +1,6 @@
 <div class="box box-default">
     <div class="box-header with-border">
-      <h4 class="box-title">Thêm mới</h4>
+      <h4 class="box-title">Chỉnh sửa sản phẩm</h4>
     </div>
     <!-- /.box-header -->
     <div class="box-body wizard-content">
@@ -37,9 +37,9 @@
                         <div class="form-group">
                             <label for="wlocation2"> Loại : <span class="danger">*</span> </label>
                             <select ng-model="inputs.type_id" class="custom-select form-control required" id="wlocation2" name="location">
-                                <option value="1">Chung cư</option>
-                                <option value="2">Nhà đất</option>
-                                <option value="3">Đất</option>
+                                <option ng-selected="inputs.type_id == 1" value="1">Chung cư</option>
+                                <option ng-selected="inputs.type_id == 2" value="2">Nhà đất</option>
+                                <option ng-selected="inputs.type_id == 3" value="3">Đất</option>
                             </select>
                         </div>
                     </div>
@@ -47,15 +47,15 @@
                         <div class="form-group">
                             <label for="wlocation2"> Trạng thái : <span class="danger">*</span> </label>
                             <select ng-model="inputs.status" class="custom-select form-control required" id="wlocation2" name="location">
-                                <option value="0">Chưa bán</option>
-                                <option value="1">Đã cọc</option>
-                                <option value="2">Đã bán</option>
+                                <option ng-selected="inputs.status == 0" value="0">Chưa bán</option>
+                                <option ng-selected="inputs.status == 1" value="1">Đã cọc</option>
+                                <option ng-selected="inputs.status == 2" value="2">Đã bán</option>
                             </select>
                         </div>
                     </div>
                 </div>
             </section>
-        </div><div class="actions clearfix"><ul role="menu" aria-label="Pagination"><li class="disabled" aria-disabled="true"><a href="#previous" role="menuitem">Previous</a></li><li aria-hidden="false" aria-disabled="false"><a ng-click="save()" role="menuitem">Next</a></li><li aria-hidden="true" style="display: none;"><a href="#finish" role="menuitem">Submit</a></li></ul></div>
+        </div><div class="actions clearfix"><ul role="menu" aria-label="Pagination"><li class="disabled" aria-disabled="true"><a href="#previous" role="menuitem">Previous</a></li><li aria-hidden="false" aria-disabled="false"><a ng-click="onUpdate()" role="menuitem">Next</a></li></ul></div>
     </form>
     </div>
     <!-- /.box-body -->

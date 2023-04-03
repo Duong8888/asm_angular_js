@@ -2,23 +2,23 @@
         app.config(function($routeProvider){
             $routeProvider
                 .when('/',{
-                    templateUrl:"./views/test.html",
-                    controller:homeController
+                    templateUrl:"./views/table.html",
+                    controller:tableController
                 })
                 .when('/home',{
                     templateUrl:"./views/table.html",
                     controller:tableController
                 })
                 .when('/add',{
-                    templateUrl:"./views/add.html"  
+                    templateUrl:"./views/add.html",
+                    controller:addController
                 })
                 .when('/detail/:id',{
                     templateUrl:"./views/detail.html",
                     controller: detailController
                 })
-                .when('/save',{
-                    templateUrl:"./views/add.html",
-                    controller: addController
+                .when('/profile',{
+                    templateUrl:"./views/profile.html"
                 })
                 .when('/delete/:id',{
                     templateUrl:"./views/table.html",
@@ -28,5 +28,9 @@
                             $location.path('/home');
                           }
                     }
+                })
+                .when('/update/:id',{
+                    templateUrl:"./views/update.html",
+                    controller:updateController
                 })
         });

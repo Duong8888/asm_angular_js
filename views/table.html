@@ -45,7 +45,9 @@
             <td>{{item.area}}</td>
             <td>{{item.price}}</td>
             <td>
-              <button type="button" class="waves-effect waves-light btn btn-info-light btn-flat mb-5">Sửa</button>
+              <a href="#!/update/{{item.id}}">
+                <button type="button" class="waves-effect waves-light btn btn-info-light btn-flat mb-5">Sửa</button>
+              </a>
               <a onclick="return confirm('Bạn chắc chắn muốn xóa sản phẩm này chứ ?')" href="#!/delete/{{item.id}}"><button type="button"
                   class="waves-effect waves-light btn btn-danger-light btn-flat mb-5">Xóa</button></a>
             </td>
