@@ -33,4 +33,29 @@
                     templateUrl:"./views/update.html",
                     controller:updateController
                 })
+
+                .when('/category',{
+                    templateUrl:"./views/tableCategory.html",
+                    controller:tableCategoryController
+                })
+
+                .when('/deleteCategory/:id',{
+                    templateUrl:"./views/tableCategory.html",
+                    controller: deleteCategoryController,
+                    resolve: {
+                        redirect: function($location) {
+                            $location.path('/category');
+                          }
+                    }
+                })
+
+                .when('/addCategory',{
+                    templateUrl:"./views/addCategory.html",
+                    controller:addCategoryController
+                })
+
+                .when('/updateCategory/:id',{
+                    templateUrl:"./views/updateCategory.html",
+                    controller:updateCategoryController
+                })
         });

@@ -4,32 +4,40 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body wizard-content">
-        <form action="#" class="validation-wizard wizard-circle wizard clearfix" role="application" id="steps-uid-2" novalidate="novalidate"><div class="steps clearfix"></div><div class="content clearfix">
+        <form action="#" class="validation-wizard wizard-circle wizard clearfix" role="application" id="steps-uid-2" novalidate="novalidate" name="myForm"><div class="steps clearfix"></div><div class="content clearfix">
             <!-- Step 1 -->
             <h6 id="steps-uid-2-h-0" tabindex="-1" class="title current">Step 1</h6>
-            <section id="steps-uid-2-p-0" role="tabpanel" aria-labelledby="steps-uid-2-h-0" class="body current" aria-hidden="false">
+            <section id="steps-uid-2-p-0" role="tabpa nel" aria-labelledby="steps-uid-2-h-0" class="body current" aria-hidden="false">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="wfirstName2"> Tên bất động sản : <span class="danger">*</span> </label>
-                            <input type="text" ng-model="inputs.name" class="form-control required" id="wfirstName2" name="firstName"> </div>
+                            <input type="text" ng-model="inputs.name" class="form-control required" id="wfirstName2" name="firstName"> 
+                            <p style="color: red;" ng-if="erros['name']">{{erros['name']}}</p>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="wlastName2"> Diện tích bất động sản : <span class="danger">*</span> </label>
-                            <input type="text" ng-model="inputs.area" class="form-control required" id="wlastName2" name="lastName"> </div>
+                            <input type="text" ng-model="inputs.area" class="form-control required" id="wlastName2" name="lastName"> 
+                            <p style="color: red;" ng-if="erros['area']">{{erros['area']}}</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="wemailAddress2"> Giá : <span class="danger">*</span> </label>
-                            <input type="text" ng-model="inputs.price" class="form-control required" id="wemailAddress2" name="emailAddress"> </div>
+                            <input type="text" ng-model="inputs.price" class="form-control required" id="wemailAddress2" name="emailAddress">
+                            <p style="color: red;" ng-if="erros['price']">{{erros['price']}}</p>
+                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="wphoneNumber2">Đường dẫn ảnh :</label>
-                            <input ng-model="inputs.image_url" type="tel" class="form-control" id="wphoneNumber2"> </div>
+                            <input ng-model="inputs.image_url" type="tel" class="form-control" id="wphoneNumber2">
+                            <p style="color: red;" ng-if="erros['image_url']">{{erros['image_url']}}</p>
+                         </div>
                     </div>
                 </div>
                 <div class="row">
@@ -37,10 +45,10 @@
                         <div class="form-group">
                             <label for="wlocation2"> Loại : <span class="danger">*</span> </label>
                             <select ng-model="inputs.type_id" class="custom-select form-control required" id="wlocation2" name="location">
-                                <option value="1">Chung cư</option>
-                                <option value="2">Nhà đất</option>
-                                <option value="3">Đất</option>
+                                <option value="">Chọn</option>
+                                <option  ng-repeat="item in categoryList" value="{{item.id}}">{{item.name}}</option>
                             </select>
+                            <p style="color: red;" ng-if="erros['type_id']">{{erros['type_id']}}</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -51,6 +59,7 @@
                                 <option value="1">Đã cọc</option>
                                 <option value="2">Đã bán</option>
                             </select>
+                            <p style="color: red;" ng-if="erros['status']">{{erros['status']}}</p>
                         </div>
                     </div>
                 </div>
